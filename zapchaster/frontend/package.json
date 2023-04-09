@@ -15,6 +15,7 @@
     "swiper": "^8.4.7",
     "vue": "^3.2.47",
     "vue-awesome-swiper": "^5.0.1",
+    "vue-material-design-icons": "^5.2.0",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

@@ -101,6 +101,4 @@ export default {
       flex-wrap: wrap;
       text-align: center;
    }
-
-
 </style>
