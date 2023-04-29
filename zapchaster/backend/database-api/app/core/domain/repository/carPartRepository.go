@@ -6,5 +6,5 @@ import (
 
 type ICarPartRepository interface {
 	GetAll() ([]entities.CarPart, error)
-	Add(d *entities.CarPart) (int, error)
+	Add(d *entities.CarPart) error
 }

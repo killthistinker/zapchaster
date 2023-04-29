@@ -5,5 +5,5 @@ import (
 )
 
 type ICarPhotoRepository interface {
-	Add(d entities.PartPhoto) (int, error)
+	Add(d entities.PartPhoto) error
 }

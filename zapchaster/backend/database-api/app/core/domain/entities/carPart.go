@@ -1,6 +1,9 @@
 package entities
 
+import "github.com/jinzhu/gorm"
+
 type CarPart struct {
+	gorm.Model
 	Id           int64  `json:"id"`
 	WinCode      string `json:"winCode"`
 	Title        string `json:"title"`

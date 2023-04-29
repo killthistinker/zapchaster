@@ -27,11 +27,11 @@ func (c CarPartService) AddPart(d *carPartDtos.CarPartDto) int {
 		Type:         d.Type,
 		WinCode:      d.WinCode,
 	}
-	r, err := c.ICarPartRepository.Add(&entity)
+	err := c.ICarPartRepository.Add(&entity)
 	if err != nil {
 		return -2
 	}
-	return r
+	return 0
 }
 
 func (c CarPartService) GetAll() []carPartDtos.CarPartDto {
