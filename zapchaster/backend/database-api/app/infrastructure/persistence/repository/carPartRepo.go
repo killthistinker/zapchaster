@@ -26,3 +26,20 @@ func (c CarPartRepo) GetAll() ([]entities.CarPart, error) {
 	}
 	return carParts, nil
 }
+
+func (c CarPartRepo) AddParts(d *[]entities.CarPart) (int, error) {
+	res := c.db.Create(d)
+	if res.Error != nil {
+		return -1, res.Error
+	}
+	return 0, nil
+}
+
+func (c CarPartRepo) GetCarPartFromId(partId int64) (entities.CarPart, error) {
+	var carPart entities.CarPart
+	res := c.db.First(&carPart, partId)
+	if res.Error != nil {
+		return carPart, res.Error
+	}
+	return carPart, nil
+}

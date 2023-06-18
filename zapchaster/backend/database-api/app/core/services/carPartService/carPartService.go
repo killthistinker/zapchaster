@@ -6,6 +6,8 @@ import (
 	"database-api/app/core/domain/entities"
 	"database-api/app/core/domain/repository"
 	persistence "database-api/app/infrastructure/persistence/repository"
+	"fmt"
+	"strconv"
 )
 
 type CarPartService struct {
@@ -20,11 +22,11 @@ func NewCarPartService(repo persistence.CarPartRepo) *CarPartService {
 func (c CarPartService) AddPart(d *carPartDtos.CarPartDto) int {
 	entity := entities.CarPart{
 		CarBand:      d.CarBand,
+		Price:        d.Price,
 		Description:  d.Description,
 		MainPhoto:    d.MainPhoto,
 		Manufacturer: d.Manufacturer,
 		Title:        d.Title,
-		Type:         d.Type,
 		WinCode:      d.WinCode,
 	}
 	err := c.ICarPartRepository.Add(&entity)
@@ -32,6 +34,29 @@ func (c CarPartService) AddPart(d *carPartDtos.CarPartDto) int {
 		return -2
 	}
 	return 0
+}
+
+func (c CarPartService) GetPart(partId string) (carPartDtos.CarPartDto, error) {
+	id, err := strconv.ParseInt(partId, 10, 64)
+	if err != nil {
+		return carPartDtos.CarPartDto{}, err
+	}
+	resEntity, err := c.GetCarPartFromId(id)
+	if err != nil {
+		return carPartDtos.CarPartDto{}, err
+	}
+
+	res := carPartDtos.CarPartDto{
+		Id:           resEntity.Id,
+		Price:        resEntity.Price,
+		Manufacturer: resEntity.Manufacturer,
+		Title:        resEntity.Title,
+		WinCode:      resEntity.WinCode,
+		MainPhoto:    resEntity.MainPhoto,
+		CarBand:      resEntity.CarBand,
+		Description:  resEntity.Description,
+	}
+	return res, nil
 }
 
 func (c CarPartService) GetAll() []carPartDtos.CarPartDto {
@@ -42,7 +67,7 @@ func (c CarPartService) GetAll() []carPartDtos.CarPartDto {
 	partDto := mapper.Map(parts, func(p entities.CarPart) carPartDtos.CarPartDto {
 		return carPartDtos.CarPartDto{
 			Id:           p.Id,
-			Type:         p.Type,
+			Price:        p.Price,
 			WinCode:      p.WinCode,
 			Title:        p.Title,
 			MainPhoto:    p.MainPhoto,
@@ -52,4 +77,27 @@ func (c CarPartService) GetAll() []carPartDtos.CarPartDto {
 		}
 	})
 	return partDto
+}
+
+func (c CarPartService) AddParts(d *[]carPartDtos.CarPartDto) int {
+	parts := mapper.Map(*d, func(car carPartDtos.CarPartDto) entities.CarPart {
+		return entities.CarPart{
+			Id:           car.Id,
+			WinCode:      car.WinCode,
+			Price:        car.Price,
+			Title:        car.Title,
+			Description:  car.Description,
+			Manufacturer: car.Manufacturer,
+			CarBand:      car.CarBand,
+			MainPhoto:    car.MainPhoto,
+		}
+	})
+
+	res, err := c.ICarPartRepository.AddParts(&parts)
+	if err != nil {
+		fmt.Println(err)
+		return res
+	}
+
+	return res
 }

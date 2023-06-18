@@ -5,5 +5,6 @@ import (
 )
 
 type IPartPhotoService interface {
-	AddPhoto(photo *partPhotoDtos.PartPhotoDto) int
+	AddPhoto(photo []partPhotoDtos.PartPhotoDto) int
+	GetPartPhotosFromId(partId string) ([]partPhotoDtos.PartPhotoDto, error)
 }

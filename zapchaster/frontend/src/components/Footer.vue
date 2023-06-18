@@ -5,8 +5,9 @@
           <div class="col-md-4">
             <h3>Контакты</h3>
             <p>Адрес: г. Алматы</p>
-            <p>Телефон: +7 (999) 123-45-67</p>
-            <p>Email: info@autostore.com</p>
+            <p>Телефон: +7 707 827 6330</p>
+            <a class="ws__link" href="https://wa.me/77479656291?text=Здраствуйте,%20по%20поводу%20объявления%20с%20Autostore ">Whatsapp: +7 707 827 6330</a>
+            <p>Email: popovich74@mail.ru</p>
           </div>
         </div>
         <hr>
@@ -40,5 +41,10 @@
  .links{
     text-decoration: none;
     color: aliceblue;
+ }
+
+ .ws__link{
+  text-decoration: none;
+  color: rgb(49 247 145 / 84%);
  }
 </style>

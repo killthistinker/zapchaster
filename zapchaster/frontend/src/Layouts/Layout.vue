@@ -36,4 +36,24 @@ export default {
         color: aliceblue;
         text-decoration: none;
     }
+    
+@media screen and (max-width: 600px) {
+  .company-text{
+    font-size: 20px;
+  }
+
+  .navbar {
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .company-text{
+    font-size: 12px;
+  }
+
+  .navbar {
+    font-size: 6px;
+  }
+}
 </style>

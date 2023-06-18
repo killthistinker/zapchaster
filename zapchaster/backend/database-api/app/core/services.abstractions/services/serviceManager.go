@@ -18,13 +18,45 @@ func (s *ServiceManager) AddPart(d *carPartDtos.CarPartDto) int {
 }
 
 func (s *ServiceManager) GetAll() []carPartDtos.CarPartDto {
-	//TODO implement me
-	panic("implement me")
+	res := s.CarPartService.GetAll()
+	return res
 }
 
-func (s *ServiceManager) AddPhoto(photo *partPhotoDtos.PartPhotoDto) int {
-	//TODO implement me
-	panic("implement me")
+func (s *ServiceManager) AddPhoto(photos []partPhotoDtos.PartPhotoDto) int {
+	res := s.PartPhotoService.AddPhoto(photos)
+	return res
+}
+
+func (s *ServiceManager) AddParts(e *[]carPartDtos.CarPartDto) int {
+	res := s.CarPartService.AddParts(e)
+	return res
+}
+func (s *ServiceManager) GetPart(partId string) (carPartDtos.CarPartDto, error) {
+	res, err := s.CarPartService.GetPart(partId)
+	if err != nil {
+		return carPartDtos.CarPartDto{}, err
+	}
+	return res, nil
+}
+
+func (s *ServiceManager) GetPartPhotosFromId(partId string) ([]partPhotoDtos.PartPhotoDto, error) {
+	res, err := s.PartPhotoService.GetPartPhotosFromId(partId)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func (s *ServiceManager) GetPartDetails(partId string) (*carPartDtos.PartDetailDto, error) {
+	var partDetail *carPartDtos.PartDetailDto
+	partRes, err := s.GetPart(partId)
+	photoRes, err := s.GetPartPhotosFromId(partId)
+	if err != nil {
+		return nil, err
+	}
+	partDetail.WinCode = partRes.WinCode
+	partDetail.PartPhotos = photoRes
+	return partDetail, nil
 }
 
 func NewServiceManager(c carPartService.ICarPartService, p partPhoto.IPartPhotoService) IServiceManager {

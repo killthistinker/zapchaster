@@ -5,5 +5,6 @@ import (
 )
 
 type ICarPhotoRepository interface {
-	Add(d entities.PartPhoto) error
+	Add(d []entities.PartPhoto) error
+	GetPhotoSById(partId int64) ([]entities.PartPhoto, error)
 }

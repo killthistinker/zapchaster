@@ -4,7 +4,7 @@ import "github.com/jinzhu/gorm"
 
 type PartPhoto struct {
 	gorm.Model
-	Id        int64  `json:"id"`
-	PartId    int64  `json:"partId"`
-	PartPhoto string `json:"partPhoto"`
+	Id        int64  `gorm:"column:id"`
+	PartId    int64  `gorm:"column:partid"`
+	PartPhoto string `gorm:"column:PartPhoto"`
 }

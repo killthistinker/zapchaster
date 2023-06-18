@@ -8,14 +8,11 @@
     :free-mode="true"
     :pagination="{ clickable: true }"
   >
-    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/background-image.png" alt="image"></swiper-slide>
-    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/background-image.png" alt="image"></swiper-slide>
-    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/background-image.png" alt="image"></swiper-slide>
-    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/background-image.png" alt="image"></swiper-slide>
-    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/background-image.png" alt="image"></swiper-slide>
-    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/background-image.png" alt="image"></swiper-slide>
-    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/background-image.png" alt="image"></swiper-slide>
-    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/background-image.png" alt="image"></swiper-slide>
+    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/hyndai.jpg" alt="image"></swiper-slide>
+    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/kia.jpg" alt="image"></swiper-slide>
+    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/hyndai.jpg" alt="image"></swiper-slide>
+    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/kia.jpg" alt="image"></swiper-slide>
+    <swiper-slide class="slide"><img class="swiper-image" src="../../../public/hyndai.jpg" alt="image"></swiper-slide>
   </swiper>
 </template>
 
@@ -60,4 +57,10 @@
     width: 100%;
     height: 250px;
   }
+
+@media screen and (max-width: 600px) {
+  .swiper-image{
+    height: 150px;
+  }
+}
 </style> 

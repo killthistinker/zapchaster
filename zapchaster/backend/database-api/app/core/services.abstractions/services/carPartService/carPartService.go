@@ -7,4 +7,6 @@ import (
 type ICarPartService interface {
 	AddPart(d *carPartDtos.CarPartDto) int
 	GetAll() []carPartDtos.CarPartDto
+	AddParts(c *[]carPartDtos.CarPartDto) int
+	GetPart(partId string) (carPartDtos.CarPartDto, error)
 }
