@@ -7,13 +7,19 @@ import (
 )
 
 func InitDb() *gorm.DB {
-	dsn := "host=localhost user=postgres password=postgre dbname=laba port=5432 sslmode=disable"
+	dsn := "host=postgres-container user=postgres password=postgre dbname=zapchaster port=5432 sslmode=disable"
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}
 
 	err = db.AutoMigrate(&entities.PartPhoto{})
+	if err != nil {
+		panic(err)
+	}
+
+	err = db.AutoMigrate(&entities.Counter{})
+
 	if err != nil {
 		panic(err)
 	}

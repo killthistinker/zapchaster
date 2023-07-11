@@ -32,6 +32,18 @@ func (w *webService) AddPart(c *gin.Context) {
 	return
 }
 
+func (w *webService) AddCount(c *gin.Context) {
+	var dto carPartDtos.CounterDto
+	c.BindJSON(&dto)
+	res, err := w.Services.AddCount(dto)
+	if err != nil {
+		c.JSON(http.StatusOK, res)
+		return
+	}
+	c.JSON(http.StatusOK, res)
+	return
+}
+
 func (w *webService) GetAllParts(c *gin.Context) {
 	res := w.Services.GetAll()
 	c.JSON(http.StatusOK, res)
@@ -111,11 +123,6 @@ func (w *webService) AddParts(c *gin.Context) {
 
 	for i := 0; i < len(parts); i++ {
 		parts[i].MainPhoto = base64stringImg[i]
-	}
-
-	if err != nil {
-		c.JSON(http.StatusBadRequest, err)
-		return
 	}
 
 	res := w.Services.AddParts(&parts)

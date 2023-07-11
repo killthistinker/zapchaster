@@ -9,4 +9,5 @@ type ICarPartRepository interface {
 	Add(d *entities.CarPart) error
 	AddParts(d *[]entities.CarPart) (int, error)
 	GetCarPartFromId(partId int64) (entities.CarPart, error)
+	AddCount(counter *entities.Counter) (int, error)
 }

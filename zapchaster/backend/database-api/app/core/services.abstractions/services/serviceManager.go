@@ -59,6 +59,11 @@ func (s *ServiceManager) GetPartDetails(partId string) (*carPartDtos.PartDetailD
 	return partDetail, nil
 }
 
+func (s *ServiceManager) AddCount(dto carPartDtos.CounterDto) (int, error) {
+	res, err := s.CarPartService.AddCount(dto)
+	return res, err
+}
+
 func NewServiceManager(c carPartService.ICarPartService, p partPhoto.IPartPhotoService) IServiceManager {
 	return &ServiceManager{
 		CarPartService:   c,

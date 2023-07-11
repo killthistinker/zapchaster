@@ -13,6 +13,11 @@ type CarPartDto struct {
 	MainPhoto    string `json:"mainPhoto"`
 }
 
+type CounterDto struct {
+	WinCode string `json:"winCode"`
+	Count   int64  `json:"count"`
+}
+
 type PartDetailDto struct {
 	Id           int64                        `json:"id"`
 	WinCode      string                       `json:"winCode"`
@@ -21,7 +26,7 @@ type PartDetailDto struct {
 	Description  string                       `json:"description"`
 	Manufacturer string                       `json:"manufacturer"`
 	CarBand      string                       `json:"carBrand"`
-	PartPhotos   []partPhotoDtos.PartPhotoDto `json:"partPhotos"`
+	PartPhotos   []partPhotoDtos.PartPhotoDto `json:"partImages"`
 }
 
 type AddPartDto struct {

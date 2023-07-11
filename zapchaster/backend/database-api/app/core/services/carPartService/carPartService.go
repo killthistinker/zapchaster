@@ -101,3 +101,11 @@ func (c CarPartService) AddParts(d *[]carPartDtos.CarPartDto) int {
 
 	return res
 }
+
+func (c CarPartService) AddCount(dto carPartDtos.CounterDto) (int, error) {
+	var counterEntity entities.Counter
+	counterEntity.Count = dto.Count
+	counterEntity.WinCode = dto.WinCode
+	res, err := c.ICarPartRepository.AddCount(&counterEntity)
+	return res, err
+}

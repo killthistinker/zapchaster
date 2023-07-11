@@ -9,4 +9,5 @@ type ICarPartService interface {
 	GetAll() []carPartDtos.CarPartDto
 	AddParts(c *[]carPartDtos.CarPartDto) int
 	GetPart(partId string) (carPartDtos.CarPartDto, error)
+	AddCount(dto carPartDtos.CounterDto) (int, error)
 }

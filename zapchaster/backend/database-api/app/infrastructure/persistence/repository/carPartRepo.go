@@ -2,6 +2,7 @@ package persistence
 
 import (
 	"database-api/app/core/domain/entities"
+	"errors"
 	"gorm.io/gorm"
 )
 
@@ -42,4 +43,26 @@ func (c CarPartRepo) GetCarPartFromId(partId int64) (entities.CarPart, error) {
 		return carPart, res.Error
 	}
 	return carPart, nil
+}
+
+func (c CarPartRepo) AddCount(co *entities.Counter) (int, error) {
+	var counter entities.Counter
+
+	res := c.db.Where("wincode = ?", co.WinCode).First(&counter)
+	if res.Error != nil {
+		cr := c.db.Create(co)
+		if cr.Error != nil {
+			return -1, errors.New("ошибка при создании объекта")
+		}
+		co.Count++
+		if err := c.db.Model(&entities.Counter{}).Where("wincode = ?", co.WinCode).Update("count", co.Count).Error; err != nil {
+			return -2, errors.New("ошибка при обновлении данных")
+		}
+		return 0, nil
+	}
+	counter.Count++
+	if err := c.db.Model(&entities.Counter{}).Where("wincode = ?", counter.WinCode).Update("count", counter.Count).Error; err != nil {
+		return -3, errors.New("ошибка при обновлении данных")
+	}
+	return 0, nil
 }
