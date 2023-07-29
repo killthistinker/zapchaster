@@ -12,7 +12,7 @@ func InitEndpoints(s services.IServiceManager) {
 	r := gin.Default()
 	webService := webservices.NewWebservice(s)
 	r.Use(cors.New(cors.Config{
-		AllowOrigins: []string{"http://77.243.80.132:8083", "zapchastik.kz"},
+		AllowOrigins: []string{"http://77.243.80.132:8083", "http://zapchastik.kz", "https://zapchastik.kz"},
 		AllowMethods: []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders: []string{"Authorization", "Content-Type"},
 	}))
