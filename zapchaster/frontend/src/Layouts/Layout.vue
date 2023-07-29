@@ -1,9 +1,9 @@
 <template>
  <header>
     <div class="header">
-        <div class="empty-div"></div>
         <div class="header-text">
-            <router-link class="company-text" to="/">Authostore</router-link>
+            <router-link class="company-text" to="/">Zapchastik.kz</router-link>
+            <h2 class="sub-title">Запчасти из Казахстана по выгодным ценам!</h2>
         </div>
         <div class="navbar">
             <Navbar/>
@@ -29,31 +29,53 @@ export default {
         justify-content: space-around;
         align-items: center;
     }
-    .company-text{
+    .header-text{
         font-size: 38px;
         font-family: 'Unbounded';
         font-weight: 300;
-        color: aliceblue;
-        text-decoration: none;
+    }
+
+    .company-text{
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .sub-title{
+      font-size: 16px;
+      color: aliceblue;
+      font-weight: 200;
     }
     
 @media screen and (max-width: 600px) {
-  .company-text{
-    font-size: 20px;
+  .header-text{
+    width: 25%;
+    font-size: 16px;
   }
 
-  .navbar {
-    font-size: 7px;
+  li{
+    padding: 0 5px
   }
-}
 
-@media screen and (max-width: 350px) {
-  .company-text{
+  .sub-title{
     font-size: 12px;
   }
 
   .navbar {
-    font-size: 6px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header-text{
+    font-size: 12px;
+  }
+
+  .sub-title{
+    font-size: 8px;
+  }
+
+  .navbar {
+    font-size: 10px;
   }
 }
 </style>

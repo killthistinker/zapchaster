@@ -11,20 +11,27 @@ export default {
   name: 'App',
   components: {
     Footer
+  },
+  mounted() {
+    // Изменение названия сайта
+    document.title = 'Zapchastik.kz';
   }
 }
 </script>
 
 <style>
+
+
 body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #4b4b4b;
-  background-image: url(../public/background.jpg);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../public/background.jpg);
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-}
+  
+} 
 
 #id{
   margin: 0;

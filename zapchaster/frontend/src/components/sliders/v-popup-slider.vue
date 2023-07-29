@@ -1,4 +1,4 @@
-<!-- eslint-disable -->
+eslint-disable
 <template>
     <swiper
       class="swiper"
@@ -9,8 +9,8 @@
       :pagination="{ clickable: true }"
      
     >
-      <swiper-slide class="slide" v-for="image in partImages.partPhotos" :key="image.partPhoto">
-        <img class="swiper-image" :src="'data:image/png;base64,'+ image.partPhoto " alt="test">
+      <swiper-slide class="slide" v-for="image in partImages" :key="image.partImage">
+        <img class="swiper-image" :src="'data:image/png;base64,'+ image.partImage " alt="test">
       </swiper-slide>
     </swiper>
 </template>
@@ -32,15 +32,10 @@
       },
       props: {
         partImages:{
-            type: Object,
+            type: Array,
             default() {
-                return {}
+                return []
             }
-        }
-       },
-       methods : {
-        getinfo () {
-          console.log(this.partImages.partPhotos)
         }
        },
       setup() {

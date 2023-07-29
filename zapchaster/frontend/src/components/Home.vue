@@ -1,4 +1,3 @@
-<!-- eslint-disable -->
 <template>
     <Layout/>
       <div class="container">
@@ -7,7 +6,8 @@
                 <MainSlider/>
             </div>
           </div>
-          <div class="product-block">
+          <LoadingSpinner v-if="loading"></LoadingSpinner>
+          <div v-else class="product-block">
             <Product 
             v-for="product in products" 
             :key="product.id"
@@ -21,21 +21,27 @@
 import Layout from '../Layouts/Layout.vue'
 import MainSlider from './sliders/MainSlider.vue'
 import Product from './Product.vue'
+import getParts from '../api/parts'
+import LoadingSpinner from './LoadingSpinner.vue';
 export default {
      name: 'HomeV',
      components: {
     Layout,
     MainSlider,
     Product,
+    LoadingSpinner,
      },
     data (){
       return{
          products: [
-      ]
+      ],
+         loading: true
       } 
     },
-    mounted (){
-      this.$axios.get('http://localhost:8080/carpart').then(response => (this.products = response.data))
+    async mounted (){
+      const resp = await getParts()
+      this.products = resp.data
+      this.loading = false
      },
 }
 </script>
@@ -72,6 +78,14 @@ export default {
    @media screen and (max-width: 600px) {
   .product-block{
    margin-top: 0%;
+  }
+
+  .slider {
+   height: 110px;
+  }
+  .preLoader {
+   margin-top: 10vh;
+   align-items: flex-start;
   }
 }
 

@@ -10,7 +10,7 @@
             <slot>
                 <div class="image-block">
                     <div class="content__image">
-                <VpopupSlider :partImages="partImages"/>
+                <VpopupSlider :partImages="partDetail.partImages"/>
                 </div>
                 </div>
                 <div class="main-info">
@@ -25,8 +25,9 @@
             </slot>
         </div>
         <div class="v-popup__footer">
-            <a :href="'https://wa.me/77479656291?text=Здравствуйте,%20по%20поводу%20детали%20код%20детали:%20' + partDetail.winCode" class="buy-button">Заказать</a>
+            <a @click="counter" :href="`https://wa.me/77078276330?text=Здравствуйте,%20по%20поводу%20детали%20${partDetail.title}%20код%20детали:%20${partDetail.winCode}`" class="buy-button">Заказать</a>
             <button @click="closePopup" class="close__popup btn">Закрыть</button>
+            
         </div>
        </div>
     </div>
@@ -34,6 +35,7 @@
 
 <script>
 import VpopupSlider from '../sliders/v-popup-slider.vue'
+import { counter } from '@/api/parts'
     export default{
         name: 'v-popup',
         components:{
@@ -45,33 +47,24 @@ import VpopupSlider from '../sliders/v-popup-slider.vue'
             default() {
                 return {}
             },
-            partImages:[]
-        }
+        },
        },
         methods: {
             closePopup (){
                 this.$emit('closePopup')
             },
 
-        },
-        data () {
-            return {
-                partImages : {}
-            }
-        },
-        watch: {
-        partDetail: {
-        handler(newValue) {
-            this.partImages = {
-                ...this.partImages,
-                ...newValue
-            }
-        },
-        deep: true
-    }
-}  
-    };
+        async counter(){
+          var data = {
+            'winCode': this.partDetail.winCode,
+            'count': 0
+          }
+           const response = await counter(data)
+           console.log(response)
+        }
 
+        },  
+    };
 </script>
 
 <style>
@@ -83,7 +76,7 @@ import VpopupSlider from '../sliders/v-popup-slider.vue'
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    background-color: #a89f9fdb;
+    background-color: #69696991;
     z-index: 9999;
     border: 1px solid #acaaaa;
     border-radius: 0.5em;

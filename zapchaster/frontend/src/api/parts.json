@@ -1,0 +1,146 @@
+[
+    {
+        "winCode": "23510 2E001",
+        "price": 0,
+        "title": "ШТОК В СБОРЕ СОЕДИНИТЕЛЬНЫЙ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "23041 2G201",
+        "price": 0,
+        "title": "ПОРШЕНЬ И ШТИФТ В СБОРЕ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "23040 2G000 0.5",
+        "price": 0,
+        "title": "КОМПЛЕК КОЛЕЦ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "23410 2B001 0.5",
+        "price": 0,
+        "title": "ПОРШЕНЬ И ШТИФТ В СБОРЕ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "24370 2E010",
+        "price": 0,
+        "title": "CVVT В СБОРЕ-ВЫХЛОПНОЙ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "23040 2B000 0.5",
+        "price": 0,
+        "title": "КОМПЛЕКТ КОЛЕЦ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "24321 25000",
+        "price": 0,
+        "title": "ЦЕПЬ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "27301 2B010",
+        "price": 0,
+        "title": "КАТУШКА ЗАЖИГАНИЯ В СБОРЕ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    }
+],
+[
+    {
+        "partId": 44
+    }
+]
+
+
+[
+    {
+        "winCode": "24200 2B830",
+        "price": 0,
+        "title": "РАСПРЕДЕЛИТЕЛЬНЫЙ ВАЛ В СБОРЕ-ВЫХЛОПНОЙ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "24100 2B000",
+        "price": 0,
+        "title": "РАСПРЕДВАЛ В СБОРЕ-ВПУСКНОЙ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "24100 2B010",
+        "price": 0,
+        "title": "РАСПРЕДВАЛ В СБОРЕ-ВПУСКНОЙ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "24100 2E000",
+        "price": 0,
+        "title": "РАСПРЕДВАЛ В СБОРЕ-ВПУСКНОЙ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "24200 2E070",
+        "price": 0,
+        "title": "РАСПРЕДЕЛИТЕЛЬНЫЙ ВАЛ В СБОРЕ-ВЫХЛОПНОЙ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "24200 2B010",
+        "price": 0,
+        "title": "РАСПРЕДЕЛИТЕЛЬНЫЙ ВАЛ В СБОРЕ-ВЫХЛОПНОЙ",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    },
+    {
+        "winCode": "21350 2B000",
+        "price": 0,
+        "title": "КРЫШКА В СБОРЕ - ПРИВОДНАЯ ЦЕПЬ И МАСЛЯНЫЙ НАСОС",
+        "description": "",
+        "manufacturer": "MADE IN KOREA",
+        "carBrand": "HYUNDAI/KIA",
+        "mainPhoto": ""
+    }
+]
