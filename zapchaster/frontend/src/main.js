@@ -4,4 +4,9 @@ import router from './router'
 import axiosPlugin from './axios'
 
 
-createApp(App).use(router).use(axiosPlugin).mount('#app')
+
+const app = createApp(App)
+app.use(router)
+app.use(axiosPlugin)
+app.mount('#app')
+

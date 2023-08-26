@@ -6,7 +6,7 @@
             <h3>Контакты</h3>
             <p>Адрес: Казахстан, г. Алматы</p>
 
-            <a class="ws__link" href="https://wa.me/77479656291?text=Здраствуйте,%20по%20поводу%20объявления%20с%20Autostore ">Whatsapp: +7 707 827 6330</a>
+            <a class="ws__link" href="https://wa.me/77078276330?text=Здраствуйте,%20по%20поводу%20объявления%20с%20zapchastik.kz ">Whatsapp: +7 707 827 6330</a>
             <p>Email: popovich74@mail.ru</p>
           </div>
         </div>

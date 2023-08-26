@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -20,31 +20,33 @@ export default {
 </script>
 
 <style>
-
-
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../public/background.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../public/background.jpg);
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  
-} 
 
-#id{
+}
+
+#id {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
   padding: 0;
 }
 
 :root {
-    --swiper-theme-color: #949c9c !important;
+  --swiper-theme-color: #949c9c !important;
 }
 </style>

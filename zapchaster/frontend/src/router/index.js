@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, createMemoryHistory, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../components/Home.vue'
 import About from '../components/About.vue'
 import Contacts from '../components/Contacts.vue'
@@ -26,9 +26,9 @@ const routes = [
     component: Delivery
   }
 ]
-const createHistory = process.env.SERVER ? createMemoryHistory : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory)
+
 const router = createRouter({
   routes,
-  history: createHistory(process.env.MODE === 'ssr' ? void 0 : process.env.VUE_ROUTER_BASE)
+  history: createWebHistory()
 })
 export default router
